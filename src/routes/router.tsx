@@ -1,5 +1,6 @@
 // Components
 import App from "./home/App.tsx";
+import GameTictac from "./juego-1/GameTictac.tsx";
 import ErrorPage from "./error/error-page.tsx";
 // Router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -8,12 +9,16 @@ import { resolvePath } from "../utils/index.ts";
 
 const router = createBrowserRouter([
   {
-    path: resolvePath("/"),
+    path: resolvePath(""),
     element: <App />,
     children: [
       {
-        path: resolvePath("/juego-1"),
-        element: <App />,
+        path: resolvePath("/tic-tac"),
+        element: <GameTictac />,
+      },
+      {
+        path: resolvePath("/juego-2"),
+        element: <GameTictac />,
       },
     ],
     errorElement: <ErrorPage />,
