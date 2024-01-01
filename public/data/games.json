@@ -1,0 +1,25 @@
+[
+  {
+    "nombre": "Juego-1",
+    "link": "/juego-1",
+    "className": "bg-blue-700 lg:col-span-4 col-span-5 relative backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden"
+  },
+  {
+    "nombre": "Juego-2",
+    "link": "/juego-2",
+
+    "className": "bg-blue-800 lg:col-span-6 col-span-5 relative backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden"
+  },
+  {
+    "nombre": "Juego-3",
+    "link": "/juego-3",
+
+    "className": "bg-blue-800 lg:col-span-6 col-span-5 relative backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden"
+  },
+  {
+    "nombre": "Juego-4",
+    "link": "/juego-4",
+
+    "className": "bg-blue-700 lg:col-span-4 col-span-5 relative backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden"
+  }
+]
