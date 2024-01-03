@@ -1,8 +1,14 @@
-const X = "X" as const;
-const O = "O" as const;
-
+const X = "⨉" as const;
+const O = "◯" as const;
 const TURNS = {
   X: X,
   O: O,
 };
-export { TURNS };
+
+// Edit on .css
+const TURNS_COLORS = {
+  X: "TICTACTOE__color__X",
+  O: "TICTACTOE__color__O",
+};
+
+export { TURNS, TURNS_COLORS, X, O };
