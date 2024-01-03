@@ -6,19 +6,35 @@
 }
 
 .TICTACTOE__animate-pulse {
-  animation: pulse;
+  animation: tictactoe-pulse;
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
 
-@keyframes pulse {
+.TICTACTOE__animate-bounce {
+  animation: tictactoe-bounce 0.875s infinite;
+}
+
+@keyframes tictactoe-pulse {
   0% {
-    opacity: 0.85;
+    opacity: 0.8;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.85;
+    opacity: 0.8;
+  }
+}
+
+@keyframes tictactoe-bounce {
+  0%,
+  100% {
+    transform: translateY(-10%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }

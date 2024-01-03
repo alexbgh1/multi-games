@@ -10,11 +10,12 @@ type SquareC = {
 };
 
 const handleIsWinnerSquare = (isWinnerSquare: Square) => {
+  const baseClassName = "TICTACTOE__animate-pulse TICTACTOE__animate-bounce";
   switch (isWinnerSquare) {
     case TURNS.X:
-      return `TICTACTOE__animate-pulse ${TURNS_COLORS.X}`;
+      return `${baseClassName} ${TURNS_COLORS.X}`;
     case TURNS.O:
-      return `TICTACTOE__animate-pulse ${TURNS_COLORS.O}`;
+      return `${baseClassName} ${TURNS_COLORS.O}`;
     default:
       return "";
   }
