@@ -1,6 +1,6 @@
 // Components
 import App from "./home/App.tsx";
-import GameTictac from "./juego-1/GameTictac.tsx";
+import GameTicTacToe from "./TicTacToe/GameTicTacToe.tsx";
 import ErrorPage from "./error/error-page.tsx";
 // Router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -13,12 +13,12 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: resolvePath("/tic-tac"),
-        element: <GameTictac />,
+        path: resolvePath("/tic-tac-toe"),
+        element: <GameTicTacToe />,
       },
       {
         path: resolvePath("/juego-2"),
-        element: <GameTictac />,
+        element: <GameTicTacToe />,
       },
     ],
     errorElement: <ErrorPage />,

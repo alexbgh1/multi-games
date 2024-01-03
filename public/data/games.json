@@ -1,7 +1,7 @@
 [
   {
     "nombre": "Juego-1",
-    "link": "/tic-tac",
+    "link": "/tic-tac-toe",
     "className": "bg-blue-700 lg:col-span-4 col-span-5 relative backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden"
   },
   {

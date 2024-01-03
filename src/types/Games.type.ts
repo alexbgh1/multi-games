@@ -3,4 +3,5 @@ interface Game {
   className: string;
   link: string;
 }
+
 export type { Game };

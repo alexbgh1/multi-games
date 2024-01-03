@@ -16,7 +16,9 @@ const NavOutlet = () => {
           <span>Home</span>
         </Link>
       </nav>
-      <Outlet />
+      <>
+        <Outlet />
+      </>
     </>
   );
 };
