@@ -16,7 +16,7 @@ const Square = ({ element, idx, updateBoard, isWinnerSquare }: SquareProps) => {
   return (
     <div
       onClick={() => updateBoard(idx)}
-      className={`cursor-pointer w-24 h-24 text-3xl grid place-items-center rounded-sm border border-slate-600  ${handleIsWinnerSquare(
+      className={`cursor-pointer w-24 h-24 text-3xl grid place-items-center rounded-sm border border-gray-600  ${handleIsWinnerSquare(
         isWinnerSquare
       )}`}
     >
