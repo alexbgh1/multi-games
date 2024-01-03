@@ -1,7 +1,13 @@
+// Constants
 import { TURNS, TURNS_COLORS } from "../../constants/TicTacToe/turns";
+// Types
 import { Turn } from "../../types/GameTicTacToe.type";
 
-const CurrentTurn = ({ turn }: { turn: Turn }) => {
+type CurrentTurnProps = {
+  turn: Turn;
+};
+
+const CurrentTurn = ({ turn }: CurrentTurnProps) => {
   return (
     <>
       <TurnSquare turn={turn} active={turn === TURNS.X}>
@@ -26,9 +32,7 @@ const TurnSquare = ({ children, turn, active }: TurnSquareProps) => {
   if (active && turn === TURNS.O) activeClass = TURNS_COLORS.O;
   return (
     <div
-      className={`
-      shadow-inner shadow-slate-900
-      border-x-0 border-y-[1px] border-slate-600 w-12 h-12 text-xl grid place-items-center ${activeClass}`}
+      className={`shadow-inner shadow-zinc-950 border-x-0 border-y-[1px] border-zinc-900 w-12 h-12 text-xl grid place-items-center ${activeClass}`}
     >
       {children}
     </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Square from "../../components/TicTacToe/Square";
 import CurrentTurn from "../../components/TicTacToe/CurrentTurn";
 import RestartGame from "../../components/TicTacToe/RestartGame";
+import SwapTurn from "../../components/TicTacToe/SwapTurn";
 // Constants
 import { TURNS } from "../../constants/TicTacToe/turns";
 import { WIN_CONDITIONS } from "../../constants/TicTacToe/winCondition";
@@ -65,7 +66,7 @@ const GameTicTacToe = () => {
         ))}
       </section>
       <section className="flex items-center justify-center mt-8">
-        {/* <SwapTurn turn={turn} /> */}
+        <SwapTurn changeTurn={() => setTurn(changeTurn(turn))} />
         <CurrentTurn turn={turn} />
         <RestartGame restartGame={restartGame} />
       </section>

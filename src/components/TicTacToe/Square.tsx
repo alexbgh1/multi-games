@@ -1,27 +1,18 @@
-import { TURNS, TURNS_COLORS } from "../../constants/TicTacToe/turns";
-import { Square } from "../../types/GameTicTacToe.type";
+// CSS
 import "./Square.css";
+// Types
+import { Square } from "../../types/GameTicTacToe.type";
+// Utils
+import { handleIsWinnerSquare } from "../../utils/TicTacToe";
 
-type SquareC = {
+type SquareProps = {
   element: Square;
   idx: number;
   updateBoard: (idx: number) => void;
   isWinnerSquare: Square;
 };
 
-const handleIsWinnerSquare = (isWinnerSquare: Square) => {
-  const baseClassName = "TICTACTOE__animate-pulse TICTACTOE__animate-bounce";
-  switch (isWinnerSquare) {
-    case TURNS.X:
-      return `${baseClassName} ${TURNS_COLORS.X}`;
-    case TURNS.O:
-      return `${baseClassName} ${TURNS_COLORS.O}`;
-    default:
-      return "";
-  }
-};
-
-const Square = ({ element, idx, updateBoard, isWinnerSquare }: SquareC) => {
+const Square = ({ element, idx, updateBoard, isWinnerSquare }: SquareProps) => {
   return (
     <div
       onClick={() => updateBoard(idx)}

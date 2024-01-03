@@ -1,3 +1,4 @@
+// Constants
 import { TURNS } from "../constants/TicTacToe/turns";
 import { WIN_CONDITIONS } from "../constants/TicTacToe/winCondition";
 

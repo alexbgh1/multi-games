@@ -5,10 +5,12 @@
   background-color: #356cf7;
 }
 
+.TICTACTOE__animate-pulse-bounce {
+  animation: tictactoe-pulse 3s infinite, tictactoe-bounce 0.875s infinite;
+}
+
 .TICTACTOE__animate-pulse {
-  animation: tictactoe-pulse;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
+  animation: tictactoe-pulse 3s infinite;
 }
 
 .TICTACTOE__animate-bounce {
@@ -17,20 +19,20 @@
 
 @keyframes tictactoe-pulse {
   0% {
-    opacity: 0.8;
+    opacity: 0.875;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.8;
+    opacity: 0.875;
   }
 }
 
 @keyframes tictactoe-bounce {
   0%,
   100% {
-    transform: translateY(-10%);
+    transform: translateY(-6%);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
