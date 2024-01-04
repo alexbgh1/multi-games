@@ -1,5 +1,5 @@
 // React
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // Components
 import Square from "../../components/TicTacToe/Square";
 import CurrentTurn from "../../components/TicTacToe/CurrentTurn";
@@ -8,22 +8,41 @@ import SwapTurn from "../../components/TicTacToe/SwapTurn";
 // Constants
 import { TURNS } from "../../constants/TicTacToe/turns";
 import { WIN_CONDITIONS } from "../../constants/TicTacToe/winCondition";
+import { LS_BOARD, LS_TURN, LS_WINNER, LS_WINNER_CONDITION } from "../../constants/TicTacToe/localStorage";
 // Types
 import { Board, Turn, Winner, WinnerCondition } from "../../types/GameTicTacToe.type";
 // Utils
-import { initBoard, changeTurn, checkDraw, isWinnerSquare } from "../../utils/TicTacToe";
+import {
+  getLocalStorageItem,
+  setLocalStorageItem,
+  resetLS,
+  initBoard,
+  changeTurn,
+  checkDraw,
+  isWinnerSquare,
+} from "../../utils/TicTacToe";
 
 const GameTicTacToe = () => {
-  const [board, setBoard] = useState<Board>(initBoard());
-  const [turn, setTurn] = useState<Turn>(TURNS.X);
-  const [winner, setWinner] = useState<Winner>(null);
-  const [winnerCondition, setWinnerCondition] = useState<WinnerCondition>(null);
+  const [board, setBoard] = useState<Board>(getLocalStorageItem(LS_BOARD, initBoard()));
+  const [turn, setTurn] = useState<Turn>(getLocalStorageItem(LS_TURN, TURNS.X));
+  const [winner, setWinner] = useState<Winner>(getLocalStorageItem(LS_WINNER, null));
+  const [winnerCondition, setWinnerCondition] = useState<WinnerCondition>(
+    getLocalStorageItem(LS_WINNER_CONDITION, null)
+  );
+
+  useEffect(() => {
+    setLocalStorageItem(LS_BOARD, board);
+    setLocalStorageItem(LS_TURN, turn);
+    setLocalStorageItem(LS_WINNER, winner);
+    setLocalStorageItem(LS_WINNER_CONDITION, winnerCondition);
+  }, [board, turn, winner, winnerCondition]);
 
   const restartGame = () => {
     setTurn(TURNS.X);
     setBoard(initBoard());
     setWinner(null);
     setWinnerCondition(null);
+    resetLS();
   };
 
   const updateBoard = (idx: number) => {
@@ -32,8 +51,6 @@ const GameTicTacToe = () => {
 
     // Replace Square & Change Turn
     newBoard[idx] = turn;
-
-    // Set new values
     setBoard(newBoard);
 
     // After all movements, we check if there is a win condition
