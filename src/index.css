@@ -45,3 +45,16 @@
   height: calc(100% - 0.1rem);
   width: calc(100% - 0.1rem);
 }
+
+.fade-in-150 {
+  animation: fadeIn 0.15s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -5,6 +5,7 @@ import Square from "../../components/TicTacToe/Square";
 import CurrentTurn from "../../components/TicTacToe/CurrentTurn";
 import RestartGame from "../../components/TicTacToe/RestartGame";
 import SwapTurn from "../../components/TicTacToe/SwapTurn";
+import WinnerComp from "../../components/TicTacToe/Winner";
 // Constants
 import { TURNS } from "../../constants/TicTacToe/turns";
 import { WIN_CONDITIONS } from "../../constants/TicTacToe/winCondition";
@@ -86,6 +87,9 @@ const GameTicTacToe = () => {
         <SwapTurn changeTurn={() => setTurn(changeTurn(turn))} />
         <CurrentTurn turn={turn} />
         <RestartGame restartGame={restartGame} />
+      </section>
+      <section>
+        <WinnerComp winner={winner} turn={turn} restartGame={restartGame} />
       </section>
     </main>
   );
