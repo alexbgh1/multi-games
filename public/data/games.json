@@ -6,7 +6,7 @@
   },
   {
     "nombre": "Juego-2",
-    "link": "/juego-2",
+    "link": "/sand-simulator",
 
     "className": "bg-blue-800 lg:col-span-6 col-span-5 relative backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden"
   },

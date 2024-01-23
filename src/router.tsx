@@ -1,11 +1,12 @@
 // Components
-import App from "./home/App.tsx";
-import GameTicTacToe from "./TicTacToe/GameTicTacToe.tsx";
-import ErrorPage from "./error/error-page.tsx";
+import App from "./pages/home/App.tsx";
+import GameTicTacToe from "./pages/TicTacToe/GameTicTacToe.tsx";
+import GameSandSimulator from "./pages/SandSimulator/GameSandSimulator.tsx";
+import ErrorPage from "./pages/error/error-page.tsx";
 // Router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // Utils
-import { resolvePath } from "../utils/index.ts";
+import { resolvePath } from "./utils/index.ts";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,8 @@ const router = createBrowserRouter([
         element: <GameTicTacToe />,
       },
       {
-        path: resolvePath("/juego-2"),
-        element: <GameTicTacToe />,
+        path: resolvePath("/sand-simulator"),
+        element: <GameSandSimulator />,
       },
     ],
     errorElement: <ErrorPage />,
