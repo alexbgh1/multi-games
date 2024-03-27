@@ -12,7 +12,7 @@ interface CellProps {
 const Cell = ({ cell, handleClick }: CellProps) => {
   //TODO: Fix type cell
   const currentState = SAND_STATE[cell];
-  return <div onClick={handleClick} className={`w-4 h-4 ${currentState}`}></div>;
+  return <div onClick={handleClick} className={`w-2 h-2 ${currentState}`}></div>;
 };
 
 export default Cell;

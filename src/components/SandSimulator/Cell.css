@@ -1,7 +1,19 @@
 .empty {
-  background-color: #f2f2f2;
+  background-color: transparent;
 }
 
 .sand {
   background-color: #f3cc1c;
+}
+
+.sand-slide {
+  background-color: #e6c01b;
+}
+
+.water {
+  background-color: #63c0eb;
+}
+
+.mud {
+  background-color: #8b5a2b;
 }
